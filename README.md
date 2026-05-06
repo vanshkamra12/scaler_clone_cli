@@ -1,17 +1,37 @@
-# AI Agent CLI Tool
+# Website Cloner CLI 🚀
 
-A conversational CLI agent that takes a user's instructions and clones the Scaler Academy website by generating a fully working webpage (HTML, CSS, and JS).
+A Node.js-based conversational CLI agent built for the AI Agent CLI Tool assignment. It interacts with the OpenAI API to take user prompts from the terminal and auto-generate web pages. 
 
-## Features
-- Interactive CLI for giving instructions to the agent.
-- AI reasoning loop (THINK, TOOL, OBSERVE, OUTPUT).
-- Generates a fully working Scaler clone with Header, Hero Section, and Footer.
+By default, it acts as an autonomous agent that reasons through the task and writes a complete HTML/CSS/JS clone of the Scaler Academy landing page right to your file system.
 
-## Setup
-1. Clone the repository
-2. Run \`npm install\`
-3. Create a \`.env\` file based on \`.env.example\` and add your \`OPENAI_API_KEY\`
-4. Run \`node index.js\` to start the agent
+## How it works
+The agent uses a strict thought loop:
+1. **THINK**: Figures out what to do next
+2. **TOOL**: Executes specific file-system or web-fetch actions
+3. **OBSERVE**: Analyzes the result of the tool
+4. **OUTPUT**: Finalizes the generated files
 
-## Assignment 02 - AI Agent CLI Tool
-This project satisfies the requirements for the AI Agent CLI Tool assignment.
+### Tech Stack
+* Node.js
+* OpenAI SDK
+* Axios
+
+## Running Locally
+
+1. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Set up your environment variables by creating a `.env` file:
+   ```bash
+   cp .env.example .env
+   ```
+   *Make sure to add your actual `OPENAI_API_KEY` inside `.env`!*
+
+3. Run the CLI tool:
+   ```bash
+   node index.js
+   ```
+
+Once you run it, the agent will prompt you for instructions. Just hit Enter to run the default Scaler cloning task. It will automatically create a `scaler_clone/` folder and write all the code (`index.html`, `styles.css`, `script.js`) inside it.
